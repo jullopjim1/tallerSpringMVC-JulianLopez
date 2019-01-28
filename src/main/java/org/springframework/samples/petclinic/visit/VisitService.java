@@ -1,11 +1,9 @@
-package org.springframework.samples.petclinic.owner;
+package org.springframework.samples.petclinic.visit;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.visit.Visit;
-import org.springframework.samples.petclinic.visit.VisitRepository;
 
 public class VisitService {
 
