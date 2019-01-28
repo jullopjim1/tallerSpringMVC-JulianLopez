@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.MockMvc;
  * @author Colin But
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(VisitController.class)
+@WebMvcTest(VisitControllerTests.class)
 public class VisitControllerTests {
 
     private static final int TEST_PET_ID = 1;

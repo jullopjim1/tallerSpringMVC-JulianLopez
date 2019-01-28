@@ -15,11 +15,14 @@
  */
 package org.springframework.samples.petclinic.visit;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.owner.Bill;
 import org.springframework.samples.petclinic.owner.Pet;
 import org.springframework.samples.petclinic.owner.PetService;
 import org.springframework.stereotype.Controller;
@@ -30,6 +33,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Juergen Hoeller
@@ -39,12 +44,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Dave Syer
  */
 @Controller
-class VisitController {
-
-	private final VisitService visits;
-	private final PetService pets;
+public class VisitController {
 
 	@Autowired
+	private final VisitService visits;
+
+	@Autowired
+	private final PetService pets;
+
 	public VisitController(VisitService visits, PetService pets) {
 		this.visits = visits;
 		this.pets = pets;
@@ -91,5 +98,7 @@ class VisitController {
 			return "redirect:/owners/{ownerId}";
 		}
 	}
+
+	
 
 }
